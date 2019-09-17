@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            background-color: #eeee;
+        }
+        #base{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #header{
+            background-color: black;
+            width: 100%;
+            height: 150px;
+            color: white;
+            font-size: 40px;
+            line-height: 150px;
+            font-weight: bold;
+            padding: 0 60px;
+        }
+        ul{
+            margin: 10px 0;
+            width: 300px;
+            height: 1500px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+        li{
+            height: 60px;
+            line-height: 60px;
+        }
+        .tittle{
+            font-size: 30px;
+        }
+        li:hover{
+            background-color: #777777;
+        }
+        table{
+            border: 1px solid black;
+        }
+        th,td{
+            height: 80px;
+            width: 200px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        #set{
+            position: absolute;
+            color: white;
+            top:0;
+            margin-left: 75%;
+            height: 150px;
+            line-height: 150px;
+            font-size: 25px;
+        }
+        .none{
+            position: absolute;
+            left: 350px;
+            top: 200px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #pic{
+            width: 200px;
+            height: 280px;
+            border: 1px solid black;
+            left: 500px;
+            top: 5px;
+            position: absolute;
+        }
+        .up{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            left: 200px;
+            top: 350px;
+            font-size: 25px;
+        }
+        .modify{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            left: 500px;
+            top: 350px;
+            font-size: 25px;
+        }
+        .find{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            left: 350px;
+            top: 350px;
+            font-size: 25px;
+        }
+        #gradeInfo{
+            display: none;
+        }
+        #gradeInfo .up{
+            position: absolute;
+            width: 60px;
+            height: 25px;
+            left: 280px;
+            top: 5px;
+            font-size: 16px;
+        }
+        #gradeInfo .find{
+            position: absolute;
+            width: 60px;
+            height: 25px;
+            left: 350px;
+            top: 5px;
+            font-size: 16px;
+        }
+        #gradeInfo .modify{
+            position: absolute;
+            width: 60px;
+            height: 25px;
+            left: 420px;
+            top: 5px;
+            font-size: 16px;
+        }
+        #studentInfo{
+            display: none;
+        }
+        #classInfo{
+            display: none;
+        }
+        #start{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id = 'base'>
+    <div id = 'header'>学生信息管理系统页面(教师)</div>
+    <div id="set">欢迎：<span id = 'usename'></span>教师</div>
+    <ul>
+        <li class = 'tittle'>学生基本信息</li>
+        <li>个人信息</li>
+        <li>课程信息</li>
+        <li>成绩查询</li>
+    </ul>
+    <div class="none" name = '初始界面' id = 'start'>
+        <img src="img/timg.png" alt="" >
+    </div>
+    <div class = 'none' name="学生信息录入" id = 'studentInfo'>
+        <span>学号：</span><input type="text" placeholder="请输入学号"><br/><br/>
+        <span>姓名：</span><input type="text" placeholder="请输入姓名"><br/><br/>
+        <span>年龄：</span><input type="text" placeholder="请输入年龄"><br/><br/>
+        <span>性别：</span><input type="text" placeholder="请输入性别"><br/><br/>
+        <span>院系：</span><input type="text" placeholder="请输入院系"><br/><br/>
+        <span>班级：</span><input type="text" placeholder="请输入班级"><br/><br/>
+        <div id = 'pic'></div>
+        <button class = 'up' name="studentInfo" >submit</button>
+        <button class="find" name="studentInfo" >find</button>
+        <button class = 'modify' name="studentInfo" >change</button>
+        <br/><br/><br/><br/><br/>
+        <table cellspacing="1" border="1">
+            <caption>学生基本信息</caption>
+            <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>院系</th>
+                <th>班级</th>
+                <th>密码</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class = 'none' name = '课程信息录入' id = 'classInfo'>
+        <span>课程编号：</span><input type="text" placeholder="请输入课程编号"><br/><br/>
+        <span>课程名字：</span><input type="text" placeholder="请输入课程名字"><br/><br/>
+        <span>任课老师：</span><input type="text" placeholder="请输入任课老师"><br/><br/>
+        <span>课程学分：</span><input type="text" placeholder="请输入课程学分"><br/><br/>
+        <button class = 'up' name="classInfo" >submit</button>
+        <button class="find" name="classInfo" >find</button>
+        <button class = 'modify' name="classInfo" >change</button>
+        <br/><br/><br/><br/><br/><br/><br/><br/>
+        <table cellspacing="1" border="1">
+            <caption>选课信息</caption>
+            <thead>
+            <tr>
+                <th>课程编号</th>
+                <th>课程名字</th>
+                <th>任教老师</th>
+                <th>课程学分</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="none" name = '成绩录入' id = 'gradeInfo'>
+        <span>学号：</span><input type="text" placeholder="请输入学号"><br/><br/>
+        <table cellspacing="1" border="1">
+            <caption>选课信息</caption>
+            <thead>
+            <tr>
+                <th>学生学号</th>
+                <th>课程编号</th>
+                <th>课程分数</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button class = 'up' name="gradeInfo" >submit</button>
+        <button class="find" name="gradeInfo" >find</button>
+        <button class = 'modify' name="gradeInfo" >change</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="service/ajaxTeacher.js"></script>
+</body>
+</html>
